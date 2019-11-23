@@ -4,11 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Link to Bootstrap Styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Import CSS Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Pyschic Game</title>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class= "col-8">
+                    <h1> The Pyschic Game</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <p>Guess what letter I'm thinking of</p>
+                <br>
+                <p id="wins">Wins:</p>
+                <p id="losses">Losses:</p>
+                <p id="guessesLeft">Guesses Left</p>
+                <p id="lettersGuessed">Letters Guessed:</p>
+            </div>
+        </div>
+    </div>
 
-    
+
+    <!-- Link to External javascript File -->
     <script src = "assets/javascript/game.js"></script>
 </body>
 </html>
