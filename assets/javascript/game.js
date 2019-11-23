@@ -20,13 +20,24 @@ function generateLetter(){
 //function to update guesses left on the DOM
 function updateGuesses(){
     document.getElementById("guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
+    console.log(guessesLeft)
 };
 
 // function to update the guessesSoFar array
 function lettersGuessed(){
     guessesSoFar.push(userGuess);
     document.getElementById("lettersGuessed").innerHTML = "Letters Guessed: " + guessesSoFar.toString();
+    console.log(guessesSoFar)
 };
+
+//function expression to generate the user's guess
+var userGuess = document.addEventListener("keydown",function(){
+    event.key
+    console.log(event.key)
+});
+
+
+
 
 
 
