@@ -9,7 +9,7 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 5;
 var guessesSoFar = [];
-var userGuess = "";
+
 //Function to generate random computer guess
 function generateLetter(){
     computerGuess = letters[Math.floor(Math.random() * letters.length)];
@@ -28,13 +28,18 @@ function lettersGuessed(){
 };
 
 //function expression to generate the user's guess
-document.addEventListener("keydown",function(event){
-    userGuess = event.key.toLowerCase();
-    return userGuess
-});
+// var generateUserGuess = function(event){
+//     userGuess = event.key.toLowerCase()
+//     return userGuess
+// }
+
+// document.addEventListener("keydown",function(event){
+//     userGuess = event.key.toLowerCase();
+//     return userGuess
+// });
 
 //function that resets the game, to be used after a win or if guessesLeft = 0
-function resetGame (){
+function resetGame(){
     wins = 0;
     losses = 0;
     guessesLeft = 0;
@@ -42,24 +47,33 @@ function resetGame (){
 };
 
 //main game function
-function gameRound(){
-    updateGuesses()
-    computerGuess = generateLetter();
-    console.log("Computer Guess: " + computerGuess);
-    console.log(userGuess);
-    if (computerGuess === userGuess){
-        wins++;
 
+
+ console.log(generateLetter());
+
+
+document.addEventListener("keydown",function(event){
+    
+
+    updateGuesses();
+    userGuess = event.key.toLowerCase();
+    console.log(userGuess);
+    if (userGuess === computerGuess){
+        wins++;
+        document.getElementById("wins").innerHTML = "Wins:" + wins;
     }
-    else{
+    else if (userGuess != computerGuess && guessesLeft > 0) {
         losses++;
+        document.getElementById("losses").innerText = "Losses: " + losses;
         guessesLeft--;
         updateGuesses();
         lettersGuessed();
+    }
+    else{
+        resetGame();
     };
-};
 
-console.log(userGuess);
+});
 
 
 
